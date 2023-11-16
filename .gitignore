@@ -1,0 +1,14 @@
+/src/test.py
+/src/abstract_class.py
+/src/primery.py
+/.idea/.gitignore
+/.idea/.name
+/.idea/job_search.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/pyproject.toml
+/.idea/vcs.xml
+/poetry.lock
+/src/test1.py
+/src/vacancies.json
