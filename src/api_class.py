@@ -66,20 +66,6 @@ class SJ_API(API):
         respons = requests.get(self.SJ_API_URL, params=self.params, headers=headers)
         return respons.json()
 
-    # def load_areas(self):
-    #     req = requests.get(SuperJobAPI.SJ_API_URL_AREAS)
-    #     dict_areas = req.json()
-    #
-    #     areas = {}
-    #     for k in dict_areas:
-    #         for i in range(len(k['areas'])):
-    #             if len(k['areas'][i]['areas']) != 0:
-    #                 for j in range(len(k['areas'][i]['areas'])):
-    #                     areas[k['areas'][i]['areas'][j]['name'].lower()] = k['areas'][i]['areas'][j]['id']
-    #             else:
-    #                 areas[k['areas'][i]['name'].lower()] = k['areas'][i]['id']
-    #     return areas
-
     def format_vacancies(self, all_vacancies):
         vacancies = {'vacancies': []}
         for vacancy in all_vacancies['objects']:
