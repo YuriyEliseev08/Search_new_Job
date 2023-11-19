@@ -5,6 +5,7 @@ from src.abstract_class import API
 
 
 class HH_API(API):
+    """Обращение по API к сайту HH"""
     HH_API_URL = 'https://api.hh.ru/vacancies'
     HH_API_URL_AREAS = 'https://api.hh.ru/vacancies'
 
@@ -43,6 +44,7 @@ class HH_API(API):
 
 
 class SJ_API(API):
+    """Обращение по API к сайту SuperJob"""
     SJ_API_URL = 'https://api.superjob.ru/2.0/vacancies/'
     SJ_API_URL_AREAS = 'https://api.superjob.ru/2.0/towns/'
     api_key = os.getenv('KEY_API')
@@ -62,11 +64,13 @@ class SJ_API(API):
                 f"{self.params['text']}, {self.params['area']})")
 
     def get_vacancies(self):
+        """Получаем вакансии по ключу"""
         headers = {"X-Api-App-Id": self.api_key}
         respons = requests.get(self.SJ_API_URL, params=self.params, headers=headers)
         return respons.json()
 
     def format_vacancies(self, all_vacancies):
+        """Формат отображения вакансии"""
         vacancies = {'vacancies': []}
         for vacancy in all_vacancies['objects']:
             if vacancy['payment_from'] is None and vacancy['payment_to'] is None:
